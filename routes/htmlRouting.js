@@ -1,6 +1,3 @@
-// Assign: Gino, Greg and Trevor
-// Skeleton
-// some of this will require 
 
 const db = require('../models');
 
