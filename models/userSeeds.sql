@@ -9,3 +9,8 @@ INSERT INTO Users
     (username, password)
 VALUES
     ('Jane Doe', 'pass123');
+
+
+-- fix this template 
+-- allow emmpty string for entries and user login data
+-- 

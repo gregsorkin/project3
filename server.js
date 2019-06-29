@@ -22,7 +22,7 @@ const PORT = process.env.PORT || 4500; // Need port number;
 // Middleware (app.use)
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('main'));
+app.use(express.static('main')); // react (after building react and stripping dev server)
 
 // Passport (app.use) 
 app.use(session({ secret: 'my secret', resave: true, saveUninitialized: true }));
