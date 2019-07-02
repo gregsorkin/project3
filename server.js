@@ -1,11 +1,3 @@
-// Assign: Gino, Greg and Trevor
-// Note
-/*
-This is primaruly a template, much of this is updated with our file names (for routing)
-Some of the stuff may be confusing, it is needed for Passport and OAuth.
-I left Handlebar routing in here for now but it's likely that we wont use it.
-*/
-
 require('dotenv').config();
 // Express
 const express = require('express');
@@ -17,7 +9,7 @@ const exphbs = require('express-handlebars');
 // Database
 const db = require('./models');
 // Port
-const PORT = process.env.PORT || 4500; // Need port number;
+const PORT = process.env.PORT || 4500; // Port
 
 // Middleware (app.use)
 app.use(express.urlencoded({ extended: true }));
@@ -68,3 +60,6 @@ db.sequelize.sync(syncOptions).then(() => {
 });
 
 module.exports = app;
+
+//
+
