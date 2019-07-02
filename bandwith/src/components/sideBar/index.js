@@ -4,8 +4,10 @@ import "./index.css";
 function Sidebar({name, image}) {
   return (
     <div>
-        <img alt={name} src={image} />
-        {name}
+        <div>
+        <img className="userPhoto" alt={name} src={image} />
+        </div>
+        <div>{name}</div>
     </div>
   )}
 
