@@ -1,26 +1,57 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import Wrapper from './components/wrapper';
+import Sidebar from './components/sideBar';
+import Headbar from './components/headBar';
+import Corkboard from './components/corkBoard';
+import Home from './pages/Home';
+import NoMatch from './pages/NoMatch'
+// Import the Database.
 import './App.css';
+import { homedir } from 'os';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    // users,
+  }
+
+  render() {
+    const user = {
+      id: 123,
+      name: 'Sal',
+      age: 24,
+      image: 'https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/09/dog-landing-hero-lg.jpg'
+    }
+  return(
+    <Wrapper>
+      <Sidebar
+         id={user.id}
+         key={user.id}
+         name={user.name}
+         age={user.age}
+        image={user.image}>
+      </Sidebar>
+      UserTab
+      <div>
+        <Headbar>
+          Bandwith Tape Logo
+        </Headbar>
+        <Corkboard>
+          <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            {/* <Route exact path="/newuser" component={NewUser} />
+            <Route exact path="/zeromatches" component={ZeroMatches} />
+            <Route exact path="/matches" component={Matches} />
+            <Route exact path="/survey" component={Survey} />
+            <Route exact path="/usersetup" component={UserSetup} /> */}
+            <Route component={NoMatch} />
+          </Switch>
+          </Router>
+        </Corkboard>
+      </div>
+    </Wrapper>
+  )};
 }
 
 export default App;
